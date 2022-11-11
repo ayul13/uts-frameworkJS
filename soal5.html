@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Silahkan Pilih Hewan yang kamu suka :)</h3>
+
+<form>
+    <input type="radio" name="hewan" id="harimau" value="harimau"> Harimau 
+    <input type="radio" name="hewan" id="cendrawasih" value="cendrawasih"> Burung Cendrawasih
+    <input type="radio" name="hewan" id="kupu" value="kupu"> Kupu-kupu
+    <input type="radio" name="hewan" id="kudalaut" value="kudalaut"> Kuda Laut
+    <input type="radio" name="hewan" id="merak" value="merak"> Merak
+</form>
+<script>
+    const img = document.createElement('img');
+
+const input = document.querySelectorAll('input');
+
+const tagScript = document.querySelector('script');
+
+const appearEmoticon = (hewan = '') => {
+    img.setAttribute('src', 'img/' + hewan + '.jpg');
+    document.body.insertBefore(img, tagScript);
+};
+
+input.forEach((inp) => {
+    inp.addEventListener('click', function (event) {
+        switch (event.target.id) {
+            case 'harimau':
+                appearEmoticon(event.target.id);
+                break;
+            case 'cendrawasih':
+                appearEmoticon(event.target.id);
+                break;
+            case 'kupu':
+                appearEmoticon(event.target.id);
+                break;
+            case 'kudalaut':
+                appearEmoticon(event.target.id);
+                break;
+            case 'merak':
+                appearEmoticon(event.target.id);
+                break;
+        }
+    });
+});
+</script>
+</body>
+</html>
